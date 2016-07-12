@@ -1,0 +1,7 @@
+//
+// Prefix header for all source files of the 'PokemonHook' target in the 'PokemonHook' project
+//
+
+#ifdef __OBJC__
+    #import <Foundation/Foundation.h>
+#endif

@@ -1,0 +1,348 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B52466C41D33EC2500D0F6B6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B52466C31D33EC2500D0F6B6 /* Foundation.framework */; };
+		B52466CE1D33EC2500D0F6B6 /* PokemonHook.mm in Sources */ = {isa = PBXBuildFile; fileRef = B52466CD1D33EC2500D0F6B6 /* PokemonHook.mm */; };
+		B52466E91D33F0CC00D0F6B6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B52466E81D33F0CC00D0F6B6 /* UIKit.framework */; };
+		B52466EB1D33F0D500D0F6B6 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B52466EA1D33F0D500D0F6B6 /* CoreLocation.framework */; };
+		B52466ED1D33F0E000D0F6B6 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B52466EC1D33F0E000D0F6B6 /* QuartzCore.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		B52466C01D33EC2500D0F6B6 /* PokemonHook.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = PokemonHook.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
+		B52466C31D33EC2500D0F6B6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		B52466C81D33EC2500D0F6B6 /* control.txt */ = {isa = PBXFileReference; lastKnownFileType = text; name = control.txt; path = Package/DEBIAN/control.txt; sourceTree = "<group>"; };
+		B52466C91D33EC2500D0F6B6 /* control */ = {isa = PBXFileReference; lastKnownFileType = text; name = control; path = Package/DEBIAN/control; sourceTree = "<group>"; };
+		B52466CB1D33EC2500D0F6B6 /* PackageVersion.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = PackageVersion.plist; sourceTree = "<group>"; };
+		B52466CC1D33EC2500D0F6B6 /* PokemonHook-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PokemonHook-Prefix.pch"; sourceTree = "<group>"; };
+		B52466CD1D33EC2500D0F6B6 /* PokemonHook.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = PokemonHook.mm; sourceTree = "<group>"; };
+		B52466D21D33EC2500D0F6B6 /* PokemonHook.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = PokemonHook.plist; path = Package/Library/MobileSubstrate/DynamicLibraries/PokemonHook.plist; sourceTree = "<group>"; };
+		B52466E81D33F0CC00D0F6B6 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		B52466EA1D33F0D500D0F6B6 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		B52466EC1D33F0E000D0F6B6 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B52466BC1D33EC2500D0F6B6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B52466ED1D33F0E000D0F6B6 /* QuartzCore.framework in Frameworks */,
+				B52466EB1D33F0D500D0F6B6 /* CoreLocation.framework in Frameworks */,
+				B52466E91D33F0CC00D0F6B6 /* UIKit.framework in Frameworks */,
+				B52466C41D33EC2500D0F6B6 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B52466B61D33EC2500D0F6B6 = {
+			isa = PBXGroup;
+			children = (
+				B52466C51D33EC2500D0F6B6 /* PokemonHook */,
+				B52466C21D33EC2500D0F6B6 /* Frameworks */,
+				B52466C11D33EC2500D0F6B6 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B52466C11D33EC2500D0F6B6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B52466C01D33EC2500D0F6B6 /* PokemonHook.dylib */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B52466C21D33EC2500D0F6B6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B52466EC1D33F0E000D0F6B6 /* QuartzCore.framework */,
+				B52466EA1D33F0D500D0F6B6 /* CoreLocation.framework */,
+				B52466E81D33F0CC00D0F6B6 /* UIKit.framework */,
+				B52466C31D33EC2500D0F6B6 /* Foundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B52466C51D33EC2500D0F6B6 /* PokemonHook */ = {
+			isa = PBXGroup;
+			children = (
+				B52466CD1D33EC2500D0F6B6 /* PokemonHook.mm */,
+				B52466C61D33EC2500D0F6B6 /* Package */,
+				B52466CA1D33EC2500D0F6B6 /* Supporting Files */,
+			);
+			path = PokemonHook;
+			sourceTree = "<group>";
+		};
+		B52466C61D33EC2500D0F6B6 /* Package */ = {
+			isa = PBXGroup;
+			children = (
+				B52466C71D33EC2500D0F6B6 /* DEBIAN */,
+				B52466CF1D33EC2500D0F6B6 /* Library */,
+			);
+			name = Package;
+			sourceTree = "<group>";
+		};
+		B52466C71D33EC2500D0F6B6 /* DEBIAN */ = {
+			isa = PBXGroup;
+			children = (
+				B52466C81D33EC2500D0F6B6 /* control.txt */,
+				B52466C91D33EC2500D0F6B6 /* control */,
+			);
+			name = DEBIAN;
+			sourceTree = "<group>";
+		};
+		B52466CA1D33EC2500D0F6B6 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B52466CB1D33EC2500D0F6B6 /* PackageVersion.plist */,
+				B52466CC1D33EC2500D0F6B6 /* PokemonHook-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B52466CF1D33EC2500D0F6B6 /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				B52466D01D33EC2500D0F6B6 /* MobileSubstrate */,
+			);
+			name = Library;
+			sourceTree = "<group>";
+		};
+		B52466D01D33EC2500D0F6B6 /* MobileSubstrate */ = {
+			isa = PBXGroup;
+			children = (
+				B52466D11D33EC2500D0F6B6 /* DynamicLibraries */,
+			);
+			name = MobileSubstrate;
+			sourceTree = "<group>";
+		};
+		B52466D11D33EC2500D0F6B6 /* DynamicLibraries */ = {
+			isa = PBXGroup;
+			children = (
+				B52466D21D33EC2500D0F6B6 /* PokemonHook.plist */,
+			);
+			name = DynamicLibraries;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		B52466BD1D33EC2500D0F6B6 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		B52466BF1D33EC2500D0F6B6 /* PokemonHook */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B52466D51D33EC2500D0F6B6 /* Build configuration list for PBXNativeTarget "PokemonHook" */;
+			buildPhases = (
+				B52466BB1D33EC2500D0F6B6 /* Sources */,
+				B52466BC1D33EC2500D0F6B6 /* Frameworks */,
+				B52466BD1D33EC2500D0F6B6 /* Headers */,
+				B52466BE1D33EC2500D0F6B6 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PokemonHook;
+			productName = PokemonHook;
+			productReference = B52466C01D33EC2500D0F6B6 /* PokemonHook.dylib */;
+			productType = "com.apple.product-type.library.dynamic";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B52466B71D33EC2500D0F6B6 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = YoungShook;
+				TargetAttributes = {
+					B52466BF1D33EC2500D0F6B6 = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+				};
+			};
+			buildConfigurationList = B52466BA1D33EC2500D0F6B6 /* Build configuration list for PBXProject "PokemonHook" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = B52466B61D33EC2500D0F6B6;
+			productRefGroup = B52466C11D33EC2500D0F6B6 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B52466BF1D33EC2500D0F6B6 /* PokemonHook */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		B52466BE1D33EC2500D0F6B6 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/opt/iOSOpenDev/bin/iosod --xcbp";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B52466BB1D33EC2500D0F6B6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B52466CE1D33EC2500D0F6B6 /* PokemonHook.mm in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		B52466D31D33EC2500D0F6B6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				EXCLUDED_RECURSIVE_SEARCH_PATH_SUBDIRECTORIES = "*.nib *.lproj *.gch (*) .DS_Store CVS .svn .git .hg *.xcodeproj *.xcode *.pbproj *.pbxproj";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(iOSOpenDevPath)/frameworks/**",
+					"$(SDKROOT)/System/Library/PrivateFrameworks",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "$(iOSOpenDevPath)/include/**";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LIBRARY_SEARCH_PATHS = "$(iOSOpenDevPath)/lib/**";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = NO;
+				iOSOpenDevPath = /opt/iOSOpenDev;
+			};
+			name = Debug;
+		};
+		B52466D41D33EC2500D0F6B6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				EXCLUDED_RECURSIVE_SEARCH_PATH_SUBDIRECTORIES = "*.nib *.lproj *.gch (*) .DS_Store CVS .svn .git .hg *.xcodeproj *.xcode *.pbproj *.pbxproj";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(iOSOpenDevPath)/frameworks/**",
+					"$(SDKROOT)/System/Library/PrivateFrameworks",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "$(iOSOpenDevPath)/include/**";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LIBRARY_SEARCH_PATHS = "$(iOSOpenDevPath)/lib/**";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				iOSOpenDevPath = /opt/iOSOpenDev;
+			};
+			name = Release;
+		};
+		B52466D61D33EC2500D0F6B6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Lin Hong (CH4P9SEPHY)";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PokemonHook/PokemonHook-Prefix.pch";
+				INSTALL_PATH = /Library/MobileSubstrate/DynamicLibraries;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "ee8be8d9-46ca-48ec-ada9-d14033af9687";
+				iOSOpenDevBuildPackageOnAnyBuild = NO;
+				iOSOpenDevCopyOnBuild = NO;
+				iOSOpenDevDevice = "";
+				iOSOpenDevInstallOnAnyBuild = NO;
+				iOSOpenDevInstallOnProfiling = YES;
+				iOSOpenDevRespringOnInstall = YES;
+				iOSOpenDevUsePackageVersionPList = YES;
+			};
+			name = Debug;
+		};
+		B52466D71D33EC2500D0F6B6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Lin Hong (CH4P9SEPHY)";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PokemonHook/PokemonHook-Prefix.pch";
+				INSTALL_PATH = /Library/MobileSubstrate/DynamicLibraries;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "ee8be8d9-46ca-48ec-ada9-d14033af9687";
+				iOSOpenDevBuildPackageOnAnyBuild = NO;
+				iOSOpenDevCopyOnBuild = NO;
+				iOSOpenDevDevice = "";
+				iOSOpenDevInstallOnAnyBuild = NO;
+				iOSOpenDevInstallOnProfiling = YES;
+				iOSOpenDevRespringOnInstall = YES;
+				iOSOpenDevUsePackageVersionPList = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B52466BA1D33EC2500D0F6B6 /* Build configuration list for PBXProject "PokemonHook" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B52466D31D33EC2500D0F6B6 /* Debug */,
+				B52466D41D33EC2500D0F6B6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B52466D51D33EC2500D0F6B6 /* Build configuration list for PBXNativeTarget "PokemonHook" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B52466D61D33EC2500D0F6B6 /* Debug */,
+				B52466D71D33EC2500D0F6B6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B52466B71D33EC2500D0F6B6 /* Project object */;
+}
