@@ -12,6 +12,9 @@
 		B52466E91D33F0CC00D0F6B6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B52466E81D33F0CC00D0F6B6 /* UIKit.framework */; };
 		B52466EB1D33F0D500D0F6B6 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B52466EA1D33F0D500D0F6B6 /* CoreLocation.framework */; };
 		B52466ED1D33F0E000D0F6B6 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B52466EC1D33F0E000D0F6B6 /* QuartzCore.framework */; };
+		B5C6FBCB1D38BCD70053CFFF /* UIView+draggable.h in Headers */ = {isa = PBXBuildFile; fileRef = B5C6FBC91D38BCD70053CFFF /* UIView+draggable.h */; };
+		B5C6FBCC1D38BCD70053CFFF /* UIView+draggable.m in Sources */ = {isa = PBXBuildFile; fileRef = B5C6FBCA1D38BCD70053CFFF /* UIView+draggable.m */; };
+		B5C6FBCE1D38BD580053CFFF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5C6FBCD1D38BD580053CFFF /* CoreGraphics.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +29,9 @@
 		B52466E81D33F0CC00D0F6B6 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		B52466EA1D33F0D500D0F6B6 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		B52466EC1D33F0E000D0F6B6 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		B5C6FBC91D38BCD70053CFFF /* UIView+draggable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+draggable.h"; sourceTree = "<group>"; };
+		B5C6FBCA1D38BCD70053CFFF /* UIView+draggable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+draggable.m"; sourceTree = "<group>"; };
+		B5C6FBCD1D38BD580053CFFF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +39,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5C6FBCE1D38BD580053CFFF /* CoreGraphics.framework in Frameworks */,
 				B52466ED1D33F0E000D0F6B6 /* QuartzCore.framework in Frameworks */,
 				B52466EB1D33F0D500D0F6B6 /* CoreLocation.framework in Frameworks */,
 				B52466E91D33F0CC00D0F6B6 /* UIKit.framework in Frameworks */,
@@ -63,6 +70,7 @@
 		B52466C21D33EC2500D0F6B6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B5C6FBCD1D38BD580053CFFF /* CoreGraphics.framework */,
 				B52466EC1D33F0E000D0F6B6 /* QuartzCore.framework */,
 				B52466EA1D33F0D500D0F6B6 /* CoreLocation.framework */,
 				B52466E81D33F0CC00D0F6B6 /* UIKit.framework */,
@@ -102,6 +110,8 @@
 		B52466CA1D33EC2500D0F6B6 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				B5C6FBC91D38BCD70053CFFF /* UIView+draggable.h */,
+				B5C6FBCA1D38BCD70053CFFF /* UIView+draggable.m */,
 				B52466CB1D33EC2500D0F6B6 /* PackageVersion.plist */,
 				B52466CC1D33EC2500D0F6B6 /* PokemonHook-Prefix.pch */,
 			);
@@ -139,6 +149,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5C6FBCB1D38BCD70053CFFF /* UIView+draggable.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -215,6 +226,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5C6FBCC1D38BCD70053CFFF /* UIView+draggable.m in Sources */,
 				B52466CE1D33EC2500D0F6B6 /* PokemonHook.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -279,15 +291,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_ARC = NO;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Lin Hong (CH4P9SEPHY)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PokemonHook/PokemonHook-Prefix.pch";
 				INSTALL_PATH = /Library/MobileSubstrate/DynamicLibraries;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "ee8be8d9-46ca-48ec-ada9-d14033af9687";
+				PRODUCT_NAME = libLocationFaker;
+				PROVISIONING_PROFILE = "";
 				iOSOpenDevBuildPackageOnAnyBuild = NO;
 				iOSOpenDevCopyOnBuild = NO;
 				iOSOpenDevDevice = "";
@@ -302,15 +314,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_ARC = NO;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Lin Hong (CH4P9SEPHY)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PokemonHook/PokemonHook-Prefix.pch";
 				INSTALL_PATH = /Library/MobileSubstrate/DynamicLibraries;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "ee8be8d9-46ca-48ec-ada9-d14033af9687";
+				PRODUCT_NAME = libLocationFaker;
+				PROVISIONING_PROFILE = "";
 				iOSOpenDevBuildPackageOnAnyBuild = NO;
 				iOSOpenDevCopyOnBuild = NO;
 				iOSOpenDevDevice = "";
