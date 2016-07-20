@@ -23,30 +23,21 @@ inline void replaceImplementation(Class newClass, Class hookedClass, SEL sel, IM
 @interface NIAIosLocationManagerHook : NSObject
 + (void)locationUpdateHook;
 - (void)start;
-- (void)startUpdating;
 @end
 
 static NIAIosLocationManagerHook *hookLocationManager;
 
 @implementation NIAIosLocationManagerHook
 static IMP NIAIosLocationManager_start = NULL;
-static IMP NIAIosLocationManager_startUpdating = NULL;
 
 + (void)locationUpdateHook {
     Class hookedClass = objc_getClass("NIAIosLocationManager");
     SEL startSel = @selector(start);
     replaceImplementation([self class], hookedClass, startSel, NIAIosLocationManager_start);
-    SEL startUpdatingSel = @selector(startUpdating);
-    replaceImplementation([self class], hookedClass, startUpdatingSel, NIAIosLocationManager_startUpdating);
 }
 
 - (void)start {
     NIAIosLocationManager_start(self, @selector(start));
-    hookLocationManager = self;
-}
-
-- (void)startUpdating {
-    NIAIosLocationManager_startUpdating(self, @selector(startUpdating));
     hookLocationManager = self;
 }
 
@@ -67,7 +58,7 @@ typedef void (^RockerValueCallback)(RockerControlDirection direction);
 @end
 
 static RockerControlView *gameRockerView;
-
+static UIButton *googleMapsButton;
 #pragma mark  CLLocation @ Swizzle
 //  Ref: https://github.com/rpplusplus/PokemonHook
 @interface CLLocation (Swizzle)
@@ -157,14 +148,21 @@ static float version = 167141100;
 
         if (hookLocationManager) {
             [hookLocationManager start];
-            [hookLocationManager startUpdating];
+            [googleMapsButton setAttributedTitle:[[NSAttributedString alloc] initWithString:[NSString stringWithFormat:@"lat:%@  lon:%@ open GoogleMaps", @(x), @(y)] attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:13]}] forState:UIControlStateNormal];
         }
     };
 
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(10 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [gameRockerView enableDragging];
         gameRockerView.cagingArea = UIScreen.mainScreen.bounds;
+
+        googleMapsButton = [[UIButton alloc] initWithFrame:CGRectMake(10, UIScreen.mainScreen.bounds.size.height - 20, UIScreen.mainScreen.bounds.size.width, 20)];
+        [googleMapsButton enableDragging];
+        [googleMapsButton addTarget:gameRockerView action:@selector(openGoogleMap) forControlEvents:UIControlEventTouchUpInside];
+        googleMapsButton.cagingArea = UIScreen.mainScreen.bounds;
+
         [[[UIApplication sharedApplication] keyWindow] addSubview:gameRockerView];
+        [[[UIApplication sharedApplication] keyWindow] addSubview:googleMapsButton];
         [[NSNotificationCenter defaultCenter] addObserver:gameRockerView selector:@selector(dismissRocker) name:@"UIWindowDidShake" object:nil];
     });
 }
@@ -191,7 +189,10 @@ static float version = 167141100;
 
     self.frame = CGRectMake(60, 20, 150, 150);
     self.backgroundColor = [UIColor clearColor];
-
+    self.layer.borderColor = [UIColor colorWithRed:0.000 green:0.000 blue:1.000 alpha:0.431].CGColor;
+    self.layer.borderWidth = 1;
+    self.clipsToBounds = YES;
+    self.layer.cornerRadius = 20;
     UIButton *up = [[UIButton alloc] initWithFrame:CGRectMake(50, 0, 50, 50)];
     up.backgroundColor = [UIColor colorWithRed:0.000 green:0.000 blue:1.000 alpha:0.123];
     up.layer.borderColor = [UIColor colorWithRed:0.000 green:0.000 blue:1.000 alpha:0.425].CGColor;
@@ -210,7 +211,7 @@ static float version = 167141100;
     [setting setTitle:@"👻" forState:UIControlStateNormal];
     setting.titleLabel.font = [UIFont systemFontOfSize:25.0];
     setting.tag = 201;
-    [setting addTarget:self action:@selector(dismissRocker) forControlEvents:UIControlEventTouchDown];
+    [setting addTarget:self action:@selector(dismissRocker) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:setting];
 
     UIButton *down = [[UIButton alloc] initWithFrame:CGRectMake(50, 100, 50, 50)];
@@ -247,6 +248,14 @@ static float version = 167141100;
 
 - (void)dismissRocker {
     self.hidden = !self.hidden;
+    googleMapsButton.hidden = self.hidden;
+}
+
+- (void)openGoogleMap {
+    if (([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:@"comgooglemaps://"]] ||
+         [[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:@"comgooglemaps-x-callback://"]])) {
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"comgooglemaps-x-callback://?center=%@,%@&zoom=17&x-success=b335b2fc-69dc-472c-9e88-e6c97f84091c-3://?resume=true&x-source=PokemonGO", @(x), @(y)]]];
+    }
 }
 
 - (void)buttonAction:(UIButton *)sender {
