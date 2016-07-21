@@ -33,4 +33,5 @@ Eng:
 - [x] 打开GoogleMaps 显示当前位置
 - [x] 摇一摇隐藏或显示控件
 
-![Demo](http://ww4.sinaimg.cn/large/006tNbRwgw1f61ofa7ovtj30yi1pcqrb.jpg)
+![Demo](http://ww3.sinaimg.cn/large/006tNbRwgw1f61onuw0ljj30c30lhq5a.jpg)
+
