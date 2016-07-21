@@ -3,16 +3,18 @@
 Eng:
 
 0. Install [iOSOpenDev](http://iosopendev.com) Tools
-1. Unzip Pokemon_unsign.zip
-2. Replace your embedded.mobileprovision file to pokemongo.app
-3. Build PokemonHook Project (Project added Run Script)
+1. Unzip **Pokemon_unsign.zip**
+2. Replace your **embedded.mobileprovision **file to **Payload/pokemongo.app**
+3. Update code signing identity in  **Entitlements.plist** and __./Resign.sh__ 
+4. Build **PokemonHook** Project (Project added Run Script，need to install [ios-deploy](https://github.com/phonegap/ios-deploy))
 
 中文：
 
 0. 安装 [iOSOpenDev](http://iosopendev.com) Tools
-1. 解压 Pokemon_unsign.zip
-2. 替换pokemongo.app中embedded.mobileprovision文件成自己的
-3. 运行 PokemonHook 项目 (工程中已添加./Resign.sh脚本，且如需要直接安装到手机中，则需 USB 连接手机，即可自动安装)
+1. 解压 **Pokemon_unsign.zip**
+2. 替换 **Payload/pokemongo.app** 中 **embedded.mobileprovision** 文件成自己的
+3. 更新 **Entitlements.plist** 与  __./Resign.sh__  文件中的 **XXXXXX** 代码签名
+4. 运行 **PokemonHook** 项目 (工程中已添加 __./Resign.sh__ 脚本，且如需要直接安装到手机中，则需 USB 连接手机，即可自动安装)
 
 ###Feature
 
@@ -31,4 +33,4 @@ Eng:
 - [x] 打开GoogleMaps 显示当前位置
 - [x] 摇一摇隐藏或显示控件
 
-![DEMO](http://ww4.sinaimg.cn/large/72f96cbajw1f5ummttxoag20af0ijnpd.gif)
+![Demo](http://ww4.sinaimg.cn/large/006tNbRwgw1f61ofa7ovtj30yi1pcqrb.jpg)

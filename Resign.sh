@@ -6,7 +6,7 @@ if [ -f "$IPA" ]; then
     rm $IPA
 fi
 
-ln -f LatestBuild/libLocationFaker.dylib Payload/pokemongo.app/libLocationFaker.dylib
+ln -f $TARGET_BUILD_DIR/libLocationFaker.dylib Payload/pokemongo.app/libLocationFaker.dylib
 
 codesign -f -s "iPhone Developer: Lin Hong (CH4P9SEPHY)" ./Payload/pokemongo.app/libLocationFaker.dylib
 
