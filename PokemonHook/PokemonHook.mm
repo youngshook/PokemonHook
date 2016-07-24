@@ -158,8 +158,10 @@ static float version = 167141100;
 
         googleMapsButton = [[UIButton alloc] initWithFrame:CGRectMake(10, UIScreen.mainScreen.bounds.size.height - 20, UIScreen.mainScreen.bounds.size.width, 20)];
         [googleMapsButton enableDragging];
-        [googleMapsButton addTarget:gameRockerView action:@selector(openGoogleMap) forControlEvents:UIControlEventTouchUpInside];
         googleMapsButton.cagingArea = UIScreen.mainScreen.bounds;
+
+        UILongPressGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc] initWithTarget:gameRockerView action:@selector(openGoogleMap:)];
+        [googleMapsButton addGestureRecognizer:longPress];
 
         [[[UIApplication sharedApplication] keyWindow] addSubview:gameRockerView];
         [[[UIApplication sharedApplication] keyWindow] addSubview:googleMapsButton];
@@ -251,7 +253,11 @@ static float version = 167141100;
     googleMapsButton.hidden = self.hidden;
 }
 
-- (void)openGoogleMap {
+- (void)openGoogleMap:(UILongPressGestureRecognizer*)gesture {
+    if ( gesture.state != UIGestureRecognizerStateEnded ) {
+        return;
+    }
+
     if (([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:@"comgooglemaps://"]] ||
          [[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:@"comgooglemaps-x-callback://"]])) {
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"comgooglemaps-x-callback://?center=%@,%@&q=%@,%@&zoom=17&x-success=b335b2fc-69dc-472c-9e88-e6c97f84091c-3://?resume=true&x-source=PokemonGO", @(x), @(y), @(x), @(y)]]];
